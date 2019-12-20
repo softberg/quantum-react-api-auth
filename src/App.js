@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./Components/Home/Home";
 import Dashboard from "./Components/Dashboard/Dashboard";
@@ -8,8 +8,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Route component={Home} path="/" />
-        <Route component={Dashboard} path="/dashboard" />
+        <Switch>
+          <Route component={Dashboard} path="/dashboard" />
+          <Route component={Home} path="/" />
+        </Switch>
       </Router>
     </div>
   );

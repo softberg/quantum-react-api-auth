@@ -11,7 +11,7 @@ const Home = () => {
       <Header />
       <Switch>
         <Route component={Welcome} path="/" exact />
-        <Route component={About} path="/About" exact />
+        <Route component={About} path="/about" />
         <Route component={Auth} path="/auth" />
       </Switch>
     </div>

@@ -1,100 +1,189 @@
 body {
-  background-color: #5cc7b2;
+  background: rgb(30, 193, 163);
   color: white;
   font-family: "Lato";
+  margin: 0;
 }
 
-a{
-  color: white;
-  font-weight: bold;
-}
-
-form{
-  text-align: center;
-  label{
-    text-align: left;
-    display: block;
-    font-size: 1.2em;
-    margin-bottom: 5px;
-  }
-  input{
-    width: 100%;
-    height: 30px;
-    border:1px solid rgb(216, 213, 213);
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    outline: 0;
-  }
-  button{
-    height: 30px;
-    border: none;
-    outline: none;
-    background: rgb(27, 190, 27);
-    border-radius: 5px;
+.App {
+  a {
     color: white;
-  }
-  div{
-    margin: 10px 0px;
-  }
-  .actions{
-    text-align: left;
-
-    margin-top: 10px;
-    a{
-      margin-right: 1em;
-    }
-  }
-}
-
-.Home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 50%;
-  .Header {
-    text-align: center;
-
-    img{
-      width: 7.5em;
-    }
-  }
-  .Welcome {
-    text-align: center;
-    ul{
-      padding: 0;
-      list-style: none;
-      li{
-        display: inline;
-        padding: 0px 5px;
-      }
-      li:first-child{
-        border-right: 1px solid white;
-      }
-    }
-  }
-  .About{
-    text-align: center;
-    h3{
-      color: rgba(0, 0, 0, 0.4);
-    }
-    code{
-      font-size: 0.8em;
-    }
-  }
-
-  .Auth{
-    width: 80%;
-  }
-  p,a{
+    font-weight: bold;
     text-decoration: none;
   }
 
+  form {
+    text-align: center;
+    label {
+      text-align: left;
+      display: block;
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+    input,textarea {
+      width: 100%;
+      height: 30px;
+      border: 1px solid rgb(216, 213, 213);
+      background-color: white;
+      border-radius: 5px;
+      padding: 5px;
+      outline: 0;
+    }
+    button {
+      height: 30px;
+      border: none;
+      outline: none;
+      background: rgb(27, 190, 27);
+      border-radius: 5px;
+      color: white;
+      padding: 0px 25px;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+
+    div {
+      margin: 10px 0px;
+    }
+    .actions {
+      text-align: left;
+      margin-top: 10px;
+      a {
+        margin-right: 1em;
+      }
+    }
+  }
+  .logo {
+    width: 7.5em;
+    margin: 10px 0px;
+  }
+  .logs {
+    background-color: #f8d7da;
+    padding: 5px;
+    width: 100%;
+    ul {
+      list-style: none;
+      li {
+        color: #721c24;
+      }
+    }
+  }
+  .Dashboard {
+    .Header {
+      height: 50px;
+      background: rgb(36, 34, 34);
+      display: flex;
+      a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+      }
+      a:hover {
+        background-color: black;
+      }
+
+      // button{
+      //   height:'100%' !important;
+      //   border:'none' !important;
+      //   background:'#242222' !important;
+      //   color:'white' !important;
+      //   outline: none !important;
+      //   font-size:'1em' !important;
+      //   font-weight:'bold' !important;
+      // }
+      // button:hover{
+      //   cursor: pointer;
+      //   background-color: black;
+      // }
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 700px;
+      
+      .Post{
+        width: 60%;
+        input {
+          margin: 15px 0px;
+        }
+
+        textarea{
+          resize: vertical;
+          min-height: 200px;
+        }
+      }
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: flex-end;
+      button{
+        height: 100%;
+        justify-self: right;
+        border: none;
+        background-color: #242222;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: white;
+        outline: 0;
+      }
+      button:hover{
+        background-color: black;
+        cursor: pointer;
+      }
+    }
+    
+  }
+  .Welcome, .Dashboard .DHome {
+    text-align: center;
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline;
+        padding: 0px 5px;
+      }
+    }
+  }
+  .Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    .Header {
+      text-align: center;
+    }
+
+    
+    .About {
+      text-align: center;
+      h3 {
+        color: rgba(0, 0, 0, 0.4);
+      }
+      code {
+        font-size: 0.8em;
+      }
+    }
+
+    .Auth {
+      width: 80%;
+    }
+    p,
+    a {
+      text-decoration: none;
+    }
+  }
 }
