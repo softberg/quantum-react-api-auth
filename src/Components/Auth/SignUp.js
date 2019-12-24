@@ -60,7 +60,6 @@ const SignUp = () => {
     formData.set('firstname', form['First Name'])
     formData.set('lastname', form['Last Name'])
 
-
     Axios.post(`/api-signup`, formData).then(({ data }) => {
       if (data.status === "success") {
         history.push("/auth/sign-in");

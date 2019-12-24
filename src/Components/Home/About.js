@@ -11,7 +11,7 @@ const About = () => {
       </p>
 
       <h1>Installation</h1>
-
+      
       <h3>Create project</h3>
       <code>
         > composer create-project quantum/project {`{ project name }`}

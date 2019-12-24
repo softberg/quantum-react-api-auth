@@ -1,16 +1,30 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect, useParams,useHistory } from "react-router-dom";
 import pajax from "../../../pajax";
 
-const createNewPost = ({ title = "", content = "" }, callback) => {
 
+const setPostOnForm = (id,callback) => {
+
+  pajax({
+    url: `/api-post/${id}`,
+    method:'GET',
+  }).then((res) => {
+    callback({
+      title:(res.title ? res.title : ""),
+      content:(res.content ? res.content : ""),
+    })
+  });
+
+}
+
+const editPost = (id,{ title = "", content = "" }, callback) => {
   const formData = new FormData();
 
   formData.set("title", title);
   formData.set("content", content);
 
   pajax({
-    url: `/api-post/amend`,
+    url: `/api-post/amend/${id}`,
     method:'POST',
     data: formData
   }).then(() => {
@@ -19,11 +33,31 @@ const createNewPost = ({ title = "", content = "" }, callback) => {
 };
 
 const Post = () => {
+
+  const history = useHistory();
+  const { id } = useParams();
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [problems, setProblems] = useState([]);
-
   const [isCreated, setIsCreated] = useState(false);
+
+  useEffect(() => {
+    if(!id){
+      history.push('/dashboard/posts');
+    }
+
+    setPostOnForm(id, ({
+      title = "",
+      content = ""
+    }) => {
+      setTitle(title);
+      setContent(content);
+    })
+
+    // eslint-disable-next-line 
+  },[]);
+
 
   const onFormSubmit = e => {
     e.preventDefault();
@@ -44,7 +78,7 @@ const Post = () => {
       return;
     }
 
-    createNewPost({ title, content }, setIsCreated);
+    editPost(id,{ title, content }, setIsCreated);
   };
 
   if (isCreated) {

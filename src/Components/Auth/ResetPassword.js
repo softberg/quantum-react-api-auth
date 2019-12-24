@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Axios from "axios";
 
@@ -11,8 +11,6 @@ const ResetPassword = () => {
     rePassword: ""
   });
   const [problems, setProblems] = useState([]);
-
-
 
   const onFormSubmit = e => {
     e.preventDefault();
@@ -36,7 +34,6 @@ const ResetPassword = () => {
     }
 
     setProblems(errors);
-
     if(errors.length){
       return
     }

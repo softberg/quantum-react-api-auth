@@ -19,7 +19,19 @@ const SignIn = () => {
 
     Axios.post(`/api-signin`, formData).then(({ data }) => {
       if (data.status === "success") {
-        localStorage.setItem("credentials", JSON.stringify(data.data));
+        const JWTToken = atob(data.data.tokens.access_token);
+
+        const jwtData = JSON.parse(atob(JWTToken.split('.')[1]));
+
+        localStorage.setItem('userInfo', JSON.stringify({
+          username:jwtData.data.username,
+          firstname:jwtData.data.firstname,
+          lastname:jwtData.data.lastname,
+          role:jwtData.data.role
+        }));
+        
+        localStorage.setItem("credentials", JSON.stringify(data.data.tokens));
+
         history.push("/dashboard");
       } else {
         setProblems([`Invalid Email or Password`]);

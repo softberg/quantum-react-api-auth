@@ -9,6 +9,7 @@ import Logo from "../../Images/quantum-logo.png";
 import Home from "./Pages/Home";
 import Post from "./Pages/Post";
 import Posts from "./Pages/Posts";
+import Single from "./Pages/Single";
 
 const Dashboard = () => {
   return (
@@ -20,6 +21,7 @@ const Dashboard = () => {
           <Switch>
             <Route path="/dashboard" exact component={Home} />
             <Route path="/dashboard/posts" exact component={Posts} />
+            <Route path="/dashboard/single/:id" exact component={Single} />
             <Route path="/dashboard/new-post" exact component={Post} />
           </Switch>
         </div>

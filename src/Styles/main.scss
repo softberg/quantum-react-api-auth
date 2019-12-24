@@ -20,7 +20,8 @@ body {
       font-size: 1.2em;
       margin-bottom: 5px;
     }
-    input,textarea {
+    input,
+    textarea {
       width: 100%;
       height: 30px;
       border: 1px solid rgb(216, 213, 213);
@@ -83,20 +84,6 @@ body {
       a:hover {
         background-color: black;
       }
-
-      // button{
-      //   height:'100%' !important;
-      //   border:'none' !important;
-      //   background:'#242222' !important;
-      //   color:'white' !important;
-      //   outline: none !important;
-      //   font-size:'1em' !important;
-      //   font-weight:'bold' !important;
-      // }
-      // button:hover{
-      //   cursor: pointer;
-      //   background-color: black;
-      // }
     }
     .content {
       display: flex;
@@ -104,26 +91,25 @@ body {
       justify-content: center;
       align-items: center;
       min-height: 700px;
-      
-      .Post{
+
+      .Post {
         width: 60%;
         input {
           margin: 15px 0px;
         }
 
-        textarea{
+        textarea {
           resize: vertical;
           min-height: 200px;
         }
       }
     }
-
     .profile {
       display: flex;
       flex-direction: column;
       width: 100%;
       align-items: flex-end;
-      button{
+      button {
         height: 100%;
         justify-self: right;
         border: none;
@@ -133,14 +119,54 @@ body {
         color: white;
         outline: 0;
       }
-      button:hover{
+      button:hover {
         background-color: black;
         cursor: pointer;
       }
     }
-    
+    .Posts {
+      width: 80%;
+      text-align: center;
+      .Post:hover{
+        cursor: pointer;
+      }
+      .Post {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        margin: 10px 5px;
+        border: 1px solid white;
+        border-radius: 5px;
+
+        .delete-button {
+          position: absolute;
+          top: -5px;
+          right: -8px;
+          border: none;
+          outline: none;
+          background-color: #815353;
+          color: white;
+          border-radius: 30%;
+          z-index: 100;
+        }
+        .delete-button:hover{
+          background-color: rgb(141, 55, 55);
+        }
+        .delete-button:hover {
+          cursor: pointer;
+        }
+        h2 {
+          text-align: center;
+          border-bottom: 1px solid white;
+        }
+        p {
+          padding: 2px;
+        }
+      }
+    }
   }
-  .Welcome, .Dashboard .DHome {
+  .Welcome,
+  .Dashboard .DHome {
     text-align: center;
     ul {
       padding: 0;
@@ -167,7 +193,6 @@ body {
       text-align: center;
     }
 
-    
     .About {
       text-align: center;
       h3 {
