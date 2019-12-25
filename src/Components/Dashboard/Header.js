@@ -1,12 +1,15 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import pajax from "../../pajax";
 
 const Header = () => {
   const history = useHistory();
 
   const logout = () => {
-    localStorage.removeItem("credentials");
-    history.push("/");
+    pajax({ url: `/api-signout`, method: "get" }).then(() => {
+      localStorage.removeItem("credentials");
+      history.push("/");
+    });
   };
 
   return (
@@ -14,9 +17,11 @@ const Header = () => {
       <Link to="/dashboard/">Home</Link>
       <Link to="/dashboard/posts">Posts</Link>
       <Link to="/dashboard/new-post">New Post</Link>
-      
+
       <div className="profile">
-        <button onClick={logout} className="logout-button">Logout</button>
+        <button onClick={logout} className="logout-button">
+          Logout
+        </button>
       </div>
     </div>
   );
