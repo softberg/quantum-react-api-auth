@@ -19,7 +19,7 @@ const SignIn = () => {
 
     Axios.post(`/api-signin`, formData).then(({ data }) => {
       if (data.status === "success") {
-        const JWTToken = atob(data.data.tokens.access_token);
+        const JWTToken = atob(data.data.access_token);
 
         const jwtData = JSON.parse(atob(JWTToken.split('.')[1]));
 
@@ -30,7 +30,7 @@ const SignIn = () => {
           role:jwtData.data.role
         }));
         
-        localStorage.setItem("credentials", JSON.stringify(data.data.tokens));
+        localStorage.setItem("credentials", JSON.stringify(data.data));
 
         history.push("/dashboard");
       } else {
