@@ -59,13 +59,35 @@ body {
     margin: 10px 0px;
   }
   .logs {
-    background-color: #f8d7da;
     padding: 5px;
     width: 100%;
-    ul {
+
+    .problems {
+      background-color: red;
+      min-height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+      li {
+        color: #a51d2b;
+      }
+    }
+
+    .success {
+      background-color: #2ac490;
+      min-height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
       list-style: none;
       li {
-        color: #721c24;
+        color: white;
       }
     }
   }
@@ -127,7 +149,7 @@ body {
     .Posts {
       width: 80%;
       text-align: center;
-      .Post:hover{
+      .Post:hover {
         cursor: pointer;
       }
       .Post {
@@ -149,7 +171,7 @@ body {
           border-radius: 30%;
           z-index: 100;
         }
-        .delete-button:hover{
+        .delete-button:hover {
           background-color: rgb(141, 55, 55);
         }
         .delete-button:hover {

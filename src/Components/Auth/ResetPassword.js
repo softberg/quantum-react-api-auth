@@ -45,7 +45,7 @@ const ResetPassword = () => {
     Axios.post(`/api-reset/${params.reset_token}`,formData)
       .then(({ data }) =>{
         if(data.status === 'error'){
-          setProblems(`Some thing wrong`);
+          setProblems([`Some thing wrong`]);
         }else{
           history.push('/auth/sign-in');
         }
