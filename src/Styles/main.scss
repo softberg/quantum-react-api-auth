@@ -6,6 +6,7 @@ body {
 }
 
 .App {
+  
   a {
     color: white;
     font-weight: bold;
@@ -92,7 +93,7 @@ body {
     }
   }
   .Dashboard {
-    .Header {
+    .NavBar {
       height: 50px;
       background: rgb(36, 34, 34);
       display: flex;
@@ -177,6 +178,24 @@ body {
         .delete-button:hover {
           cursor: pointer;
         }
+
+        .edit-button {
+          position: absolute;
+          top: -5px;
+          right: 28px;
+          border: none;
+          outline: none;
+          background-color: #adab21;
+          color: white;
+          border-radius: 30%;
+          z-index: 100;
+        }
+        .edit-button:hover {
+          background-color: #b1942a;
+        }
+        .edit-button:hover {
+          cursor: pointer;
+        }
         h2 {
           text-align: center;
           border-bottom: 1px solid white;
@@ -185,6 +204,10 @@ body {
           padding: 2px;
         }
       }
+    }
+
+    .Single {
+      text-align: center;
     }
   }
   .Welcome,

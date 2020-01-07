@@ -25,7 +25,6 @@ const CredentialsHOC = ({ children }) => {
 
   useEffect(() => {
     checkCredentials();
-
     // eslint-disable-next-line
   }, []);
 

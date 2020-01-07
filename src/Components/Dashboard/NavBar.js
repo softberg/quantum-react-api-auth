@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import pajax from "../../pajax";
 
-const Header = () => {
+const NavBar = () => {
   const history = useHistory();
 
   const logout = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <div className="Header">
+    <div className="NavBar">
       <Link to="/dashboard/">Home</Link>
       <Link to="/dashboard/posts">Posts</Link>
       <Link to="/dashboard/new-post">New Post</Link>
@@ -29,4 +29,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavBar;

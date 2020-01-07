@@ -20,6 +20,7 @@ const Auth = () => {
       if(pathname === '/auth'){
         history.push('/');
       }
+      
     });
 
     if(localStorage.getItem('credentials')){

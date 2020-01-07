@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import pajax from "../../../pajax";
 
+import { 
+  MdModeEdit,
+  MdDelete
+} from 'react-icons/md';
+
 const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 const fetchPosts = callback => {
   pajax({
@@ -45,32 +50,40 @@ const Posts = () => {
     });
   };
 
-  const onPostClick = id => {
-    history.push(`/dashboard/single/${id}`);
-  };
-
+  
   return (
     <div className="Posts">
       {posts.map((post, key) => (
         <div
           className="Post"
-          onClick={() => {
-            onPostClick(post.id);
-          }}
           key={key}
+          onClick={(e) => {
+            e.stopPropagation();
+            history.push(`/dashboard/single/${post.id}`);
+          }}
         >
           {userInfo.role === "admin" && (
-            <button
-              className="delete-button"
-              onClick={e => {
-                e.stopPropagation();
-                deletePost(post.id);
-              }}
-            >
-              X
-            </button>
+            <>
+              <button
+                className="edit-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  history.push(`/dashboard/edit/${post.id}`);
+                }}
+              >
+                <MdModeEdit />
+              </button>
+              <button
+                className="delete-button"
+                onClick={e => {
+                  e.stopPropagation();
+                  deletePost(post.id);
+                }}
+              >
+                <MdDelete />
+              </button>
+            </>
           )}
-
           <h2>{post.title}</h2>
           <p>{post.content}</p>
         </div>
