@@ -34,7 +34,7 @@ const SignIn = () => {
 
         history.push("/dashboard");
       } else {
-        setProblems([`Invalid Email or Password`]);
+        setProblems([data.message]);
       }
     });
   };

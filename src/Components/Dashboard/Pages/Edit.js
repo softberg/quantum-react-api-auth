@@ -8,10 +8,11 @@ const setPostOnForm = (id,callback) => {
   pajax({
     url: `/api-post/${id}`,
     method:'GET',
-  }).then((res) => {
+  }).then(({ data }) => {
+    
     callback({
-      title:(res.title ? res.title : ""),
-      content:(res.content ? res.content : ""),
+      title:(data.title ? data.title : ""),
+      content:(data.content ? data.content : ""),
     })
   });
 
@@ -43,9 +44,11 @@ const Post = () => {
   const [isCreated, setIsCreated] = useState(false);
 
   useEffect(() => {
+
     if(!id){
       history.push('/dashboard/posts');
     }
+  
 
     setPostOnForm(id, ({
       title = "",

@@ -16,10 +16,8 @@ export default ({ url = "", method = "GET", data = {} }) =>
         if (data.tokens) {
           localStorage.setItem("credentials", JSON.stringify(data.tokens));
           resolve(data.data);
-        } else if (!data.status) {
-          resolve(data);
         } else {
-          resolve(false);
+          resolve(data);
         }
       });
     } catch (err) {

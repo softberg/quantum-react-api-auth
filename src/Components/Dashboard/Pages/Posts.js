@@ -13,7 +13,11 @@ const fetchPosts = callback => {
     url: `/api-posts`,
     method: "GET"
   }).then(data => {
-    callback(data);
+
+
+
+    
+    callback(data.data);
   });
 };
 
